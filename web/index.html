@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Poker Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="/eel.js"></script>
+</head>
+<body>
+    <div id="game-container">
+        <h1>Poker Game</h1>
+        <div id="player-info">
+            <div id="player1" class="player">
+                <img src="avatars/player1.png" class="avatar" alt="Player 1 Avatar">
+                <h3>Player 1: <span id="player1-name"></span></h3>
+                <div class="blind-icon" id="player1-blind" style="margin-left: 10px"></div>
+                <p style="padding-left: 10px" style="padding-right: 0px">Chips: <span id="player1-chips"></span></p>
+                <div id="player1-hand" class="hand"></div>
+                <div id="player1-best-hand" style="display: none;">
+                    <h3>Best Hand: <span id="best-hand-type"></span></h3>
+                    <div id="best-hand-cards" class="hand"></div>
+                </div>
+            </div>
+            <div id="player2" class="player">
+                <img src="avatars/player2.png" class="avatar" alt="Player 2 Avatar">
+                <h3>Player 2: <span id="player2-name"></span></h3>
+                <div class="blind-icon" id="player2-blind" style="margin-left: 10px" ></div>
+                <p style="padding-left: 10px" style="padding-right: 0px">Chips: <span id="player2-chips"></span></p>
+                <div id="player2-hand" class="hand"></div>
+                <p id="player2-best-hand" style="display: none;"></p> <!-- Add this line -->
+            </div>
+        </div>
+        <div id="community-cards">
+            <h2>Community Cards</h2>
+            <div id="cards" class="hand"></div>
+        </div>
+        <div id="pot-info">
+            <p id="pot">Pot: 0</p>
+            <p id="highest-bet">Highest Bet: 0</p>
+        </div>
+        <div id="actions">
+            <button id="deal-cards-button" class="action-button" onclick="dealCards()">Deal Cards</button>
+            <button id="check-button" class="action-button" onclick="handleCheckClick()">Check</button>
+            <button id="raise-button" class="action-button" onclick="showRaiseInput()">Raise</button>
+            <button id="fold-button" class="action-button" onclick="handleFoldClick()">Fold</button>
+            <button id="play-next-round-button" class="action-button" onclick="playNextRound()" disabled>Play Next Round</button>
+            <button id="call-button" class="action-button" onclick="handleCallClick()">Call</button>
+        </div>
+    </div>
+    <div id="message">Check</div>
+    <div id="raise-input-container">
+        <input type="number" id="raise-input" placeholder="Enter raise amount">
+        <button onclick="handleRaiseClick()">Submit</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
